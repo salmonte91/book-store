@@ -1,11 +1,6 @@
-import React, { Component } from 'react';
-import './App.css';
-import axios from 'axios'
-import { google } from 'googleapis'
+import React from 'react'
+import bookSearch from './bookSearch'
 
-const auth = new google.auth.GoogleAuth({
-  key: 'AIzaSyBARYyJgXXmzCElHPuxeqmCj_gADsrxZ60'
-})
 
 function App() {
   return (
