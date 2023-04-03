@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { google } from 'googleapis';
 
 const auth = new google.auth.GoogleAuth({
-  key: 'AIzaSyBARYyJgXXmzCElHPuxeqmCj_gADsrxZ60'
+  key: authKey
 });
 
 const bookSearch = () => {
