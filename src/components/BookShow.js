@@ -1,3 +1,5 @@
+import BookItem from './BookItem'
+
 const BookShow = (props) => {
 
     const displayBook = props.data.map((item, index) => {

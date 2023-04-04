@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { google } from 'googleapis';
 
 
-const bookSearch = () => {
+const BookSearch = () => {
   const [query, setQuery] = useState('');
   const [books, setBooks] = useState([]);
 
@@ -27,4 +27,4 @@ const bookSearch = () => {
   );
 }
 
-export default bookSearch;
+export default BookSearch;

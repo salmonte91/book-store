@@ -10,8 +10,10 @@ function App() {
   let [searchBook, setSearchBook] = useState('')
   let [data, setData] = useState([])
   let [message, setMessage] = useState('Search the Book you want!')
+  const [query, setQuery] = useState('');
 
   const API_KEY = process.env.KEY
+  // const API_URL = `https://www.googleapis.com/books/v1/volumes?q=&key=${API_KEY}`
   const API_URL = `https://www.googleapis.com/books/v1/volumes?q=${query}&key=${API_KEY}`
 
 
