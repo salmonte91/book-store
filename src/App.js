@@ -1,23 +1,53 @@
-import logo from './logo.svg';
+import { useState, useEffect } from 'react';
 import './App.css';
+import SearchBar from './components/SearchBar';
+import axios from 'axios'
+import BookShow from './components/BookShow';
+
 
 function App() {
+
+  let [searchBook, setSearchBook] = useState('')
+  let [data, setData] = useState([])
+  let [message, setMessage] = useState('Search the Book you want!')
+
+  const API_KEY = process.env.KEY
+  const API_URL = `https://www.googleapis.com/books/v1/volumes?q=${query}&key=${API_KEY}`
+
+
+  useEffect(() => {
+    if(searchBook) {
+      document.title = `${searchBook} Book`
+      // fetch data using axios
+      const axiosData = async () => {
+        try {
+          const res = await axios.get(API_URL + searchBook)
+          // Making sure the res has something to return
+          const resData = await res.json()
+          if(resData.results.length > 0) {
+            setData(resData.results)
+          } else {
+            setMessage('Not found')
+          }
+        } catch (err) {
+          console.log(err)
+        }
+      }
+      axiosData()
+    }
+  }, [searchBook])
+
+  const handleSearch = (e, term) => {
+    e.preventDefault()
+    setSearchBook(term)
+  }
+  console.log(process.env)
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>BOOM BOOKSTORE </h1>
+       <SearchBar handleSearch={handleSearch} />
+       {message}
+       <BookShow data={data}/>
     </div>
   );
 }
