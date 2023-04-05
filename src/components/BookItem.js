@@ -1,30 +1,39 @@
-import React, { useState } from 'react';
-import { google } from 'googleapis';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 
+// the variable inside teh main branch was searchBook, although i had a similar var in the SearchBar component
+// so i decide to change it to BookItem
 
-const BookSearch = () => {
-  const [query, setQuery] = useState('');
-  const [books, setBooks] = useState([]);
+const BookItem= ({ book }) => {
 
-  const searchBooks = async () => {
-    const results = await google.books('v1').volumes.list({
-      q: query,
-    });
+  const [volume, setVolume] = useState({});
 
-    setBooks(results.data.items);
-  }
+  useEffect(() => {
+    const getVolume = async() => {
+        const API_KEY = process.env.KEY;
+        // ? This is gonna get the id of the book instead of the query that i was using on searchBar
+        // ? pending
+        const API_URL = `https://www.googleapis.com/books/v1/volumes/${book}?key=${API_KEY}`;
+        try {
+            const res = await axios.get(API_URL)
+            setVolume(res.data.volumeinfo);
+        } catch (err) {
+            console.log(err)
+        }
+    }
+    getVolume()
+  }, [book])
 
+  // there was an input tag, a buttom tag & an UL tag mapping each book
+  // i remove them because the SearchBar component together with the BookShow
+  // are holding those functionalities
   return (
     <div>
-      <input value={query} onChange={e => setQuery(e.target.value)} />
-      <button onClick={searchBooks}>Search</button>
-      <ul>
-        {books.map(book => (
-          <li key={book.id}>{book.volumeInfo.title}</li>
-        ))}
-      </ul>
+          <h4>{book}</h4>
+          <h2>{volume.title}</h2>
+          {/* <img/> */}
     </div>
   );
 }
 
-export default BookSearch;
+export default BookItem;
