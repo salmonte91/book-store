@@ -58,6 +58,8 @@ function App() {
        <SearchBar handleSearch={handleSearch} />
        {message}
        <BookShow data={searchResults}/>
+       <br/>
+       {/* <Comment/> */}
     </div>
   );
 }
