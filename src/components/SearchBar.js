@@ -1,6 +1,7 @@
 import { useState } from "react"
 import axios from "axios"
 import BookItem from "./BookItem"
+require('dotenv').config();
 
 const SearchBar = (props) => {
 
@@ -9,7 +10,7 @@ const SearchBar = (props) => {
 
     const handleSearch = async (e) => {
         e.preventDefault()
-        const API_KEY = process.env.KEY
+        const API_KEY = process.env.API_KEY
         const API_URL = `https://www.googleapis.com/books/v1/volumes?q=${searchBook}&key=${API_KEY}`
         try {
             const res = await axios.get(API_URL)
