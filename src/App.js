@@ -3,6 +3,7 @@ import './App.css';
 import SearchBar from './components/SearchBar';
 import axios from 'axios'
 import BookShow from './components/BookShow';
+import StarRating from '.StarRating';
 
 function App() {
 
@@ -63,5 +64,14 @@ function App() {
     </div>
   );
 }
+
+const App = () => {
+  return (
+    <div className="App">
+      <StarRating />
+    </div>
+  )
+}
+
 
 export default App;
