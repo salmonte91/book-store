@@ -1,21 +1,18 @@
 import { useState } from "react"
 
-
-
-
-
 const SearchBar = (props) => {
 
     let [searchQuery,setSearchQuery] = useState('')
  
-
-   
     const handleSearch =  (e) => {
 
         e.preventDefault()
+        //check if we are passing the correct info 
+        console.log("Event:", e);
+        console.log("Search Query:", searchQuery);
         props.handleSearch(e, searchQuery)
     }
-
+    
     const handleChange = (e) => {
         setSearchQuery(e.target.value)
     }

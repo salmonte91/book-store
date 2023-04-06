@@ -4,8 +4,10 @@ import SearchBar from './components/SearchBar';
 import axios from 'axios'
 import BookShow from './components/BookShow';
 
+
 function App() {
 
+ 
   //remove query & data variable since the other components are being incharge of that
   let [searchBook, setSearchBook] = useState('')
   let [data, setData] = useState([])
@@ -14,8 +16,12 @@ function App() {
 
   const API_KEY = process.env.REACT_APP_API_KEY
   const API_URL = `https://www.googleapis.com/books/v1/volumes?q=${query}&key=${API_KEY}`
+  
+
 
   useEffect(() => {
+    console.log("Query: ", query, "Search term: ", searchBook)
+    console.log("API URL: ", API_URL);
     
     if (searchBook) {
       document.title = `${searchBook} Book`
@@ -25,7 +31,6 @@ function App() {
 
 
   useEffect(() => {
-    
     if(query) {
       // fetch data using axios
       const axiosData = async () => {
