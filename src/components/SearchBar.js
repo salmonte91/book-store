@@ -1,36 +1,32 @@
 import { useState } from "react"
-import axios from "axios"
-import BookItem from "./BookItem"
-// require('dotenv').config();
+
+
+
+
 
 const SearchBar = (props) => {
 
-    let [searchBook,setSearchBook] = useState('')
-    let [searchResults, setSearchResults] = useState([])
+    let [searchQuery,setSearchQuery] = useState('')
+ 
 
-    const API_KEY = process.env.REACT_APP_API_KEY
-    const API_URL = `https://www.googleapis.com/books/v1/volumes?q=${searchBook}&key=${API_KEY}`
-
-    const handleSearch = async (e) => {
+   
+    const handleSearch =  (e) => {
 
         e.preventDefault()
-      
-        try {
-            const res = await axios.get(API_URL)
-            setSearchResults(res.data.items)
-            console.log(res)
-        } catch (err){
-            console.log(err)
-        }
+        props.handleSearch(e, searchQuery)
+    }
+
+    const handleChange = (e) => {
+        setSearchQuery(e.target.value)
     }
 
         return (
             <div>
                 <form onSubmit={handleSearch} >
-                    <input type="text" placeholder="Search here" onChange={(e) => setSearchBook(e.target.value)} />
-                    <input type="submit" />
+                    <label htmlFor="searchQuery" > Search</label>
+                    <input type="text" id="searchQuery" value={searchQuery} onChange={handleChange} />
+                    <button type="submit" onClick={(e) => props.handleSearch(e, searchQuery)}> Search</button>
                 </form>
-                <BookItem data={searchResults} />
             </div>
            
         )

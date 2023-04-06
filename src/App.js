@@ -26,7 +26,7 @@ function App() {
 
   useEffect(() => {
     
-    if(searchBook) {
+    if(query) {
       // fetch data using axios
       const axiosData = async () => {
         try {
@@ -36,21 +36,20 @@ function App() {
           console.log(err)
         }
       }
-      if (query) {
         axiosData()
       }
-    }
   }, [query, API_URL])
 
-  const searchResults = data.filter( book => book.volume.info.title)
+  const searchResults = data.filter( book => book.volumeInfo?.title)
 
-  const handleSearch = (e, term) => {
-    e.preventDefault()
+  const handleSearch = (term) => {
+   
     setSearchBook(term)
+
   }
 
 
-  console.log(process.env)
+  console.log(API_KEY)
   return (
     <div className="App">
       <h1>BOOM BOOKSTORE </h1>

@@ -4,7 +4,7 @@ const BookShow = (props) => {
 
     const displayBook = props.data.map((book) => {
 
-        return <BookItem book={book} volume={book.volume.info}  key={book.id} />
+        return <BookItem book={book} volume={book.volumeInfo}  key={book.id} />
     })
         return (
             <div>

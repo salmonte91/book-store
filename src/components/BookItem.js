@@ -7,14 +7,12 @@ import axios from 'axios';
 
 const BookItem= ({ book, volume }) => {
 
-  // there was an input tag, a buttom tag & an UL tag mapping each book
-  // i remove them because the SearchBar component together with the BookShow
-  // are holding those functionalities
+ 
   return (
     <div>
-        {/* {boo} */}
-          <h2>{volume.title}</h2>
-          {/* <img/> */}
+      
+          <h2>{volume.title ? volume.title : 'No title available'}</h2>
+          
     </div>
   );
 }
