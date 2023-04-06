@@ -13,7 +13,6 @@ function App() {
   const [query, setQuery] = useState('');
 
   const API_KEY = process.env.REACT_APP_API_KEY
-  // const API_URL = `https://www.googleapis.com/books/v1/volumes?q=&key=${API_KEY}`
   const API_URL = `https://www.googleapis.com/books/v1/volumes?q=${query}&key=${API_KEY}`
 
   useEffect(() => {

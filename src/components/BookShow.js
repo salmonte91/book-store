@@ -2,12 +2,9 @@ import BookItem from './BookItem'
 
 const BookShow = (props) => {
 
-    const displayBook = props.data.map((book, index) => {
+    const displayBook = props.data.map((book) => {
 
-        if(book.id) {
-        return <BookItem book={book} key={index} />
-        }
-        return null
+        return <BookItem book={book} volume={book.volume.info}  key={book.id} />
     })
         return (
             <div>
