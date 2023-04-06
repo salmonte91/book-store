@@ -3,8 +3,6 @@ import Comments from './Comments';
 
 import logo from './logo.svg';
 import './App.css';
-import show from './views/books/show.jsx';
-
 
 function App() {
   return (
