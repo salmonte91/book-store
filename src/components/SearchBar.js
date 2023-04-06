@@ -2,31 +2,31 @@ import { useState } from "react"
 
 const SearchBar = (props) => {
 
-    let [searchQuery,setSearchQuery] = useState('')
- 
-    const handleSearch =  (e) => {
+    let [query, setQuery] = useState('')
+
+    const handleSearch = (e) => {
 
         e.preventDefault()
         //check if we are passing the correct info 
         console.log("Event:", e);
-        console.log("Search Query:", searchQuery);
-        props.handleSearch(e, searchQuery)
-    }
-    
-    const handleChange = (e) => {
-        setSearchQuery(e.target.value)
+        console.log("Search Query:", query);
+        props.handleSearch(e, query)
     }
 
-        return (
-            <div>
-                <form onSubmit={handleSearch} >
-                    <label htmlFor="searchQuery" > Search</label>
-                    <input type="text" id="searchQuery" value={searchQuery} onChange={handleChange} />
-                    <button type="submit" onClick={(e) => props.handleSearch(e, searchQuery)}> Search</button>
-                </form>
-            </div>
-           
-        )
+    const handleChange = (e) => {
+        setQuery(e.target.value)
+    }
+
+    return (
+        <div>
+            <form onSubmit={handleSearch} >
+                <label htmlFor="query" > Search</label>
+                <input type="text" id="query" value={query} onChange={handleChange} />
+                <button type="submit" onClick={(e) => props.handleSearch(e, query)}> Search</button>
+            </form>
+        </div>
+
+    )
 }
 
 export default SearchBar

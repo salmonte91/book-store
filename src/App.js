@@ -4,10 +4,8 @@ import SearchBar from './components/SearchBar';
 import axios from 'axios'
 import BookShow from './components/BookShow';
 
-
 function App() {
 
- 
   //remove query & data variable since the other components are being incharge of that
   let [searchBook, setSearchBook] = useState('')
   let [data, setData] = useState([])
@@ -15,23 +13,21 @@ function App() {
   const [query, setQuery] = useState('');
 
   const API_KEY = process.env.REACT_APP_API_KEY
-  const API_URL = `https://www.googleapis.com/books/v1/volumes?q=${query}&key=${API_KEY}`
-  
-
+  let API_URL = `https://www.googleapis.com/books/v1/volumes?q=${query}&key=${API_KEY}`
 
   useEffect(() => {
     console.log("Query: ", query, "Search term: ", searchBook)
     console.log("API URL: ", API_URL);
-    
+
     if (searchBook) {
       document.title = `${searchBook} Book`
-      setQuery(searchBook);
+    
     }
-  }, [searchBook]);
-
+  }, [searchBook, query]);
 
   useEffect(() => {
-    if(query) {
+    if (query) {
+      let API_URL = `https://www.googleapis.com/books/v1/volumes?q=${query}&key=${API_KEY}`;
       // fetch data using axios
       const axiosData = async () => {
         try {
@@ -41,28 +37,27 @@ function App() {
           console.log(err)
         }
       }
-        axiosData()
-      }
-  }, [query, API_URL])
+      axiosData()
+    }
+  }, [query, API_KEY])
 
-  const searchResults = data.filter( book => book.volumeInfo?.title)
+  const searchResults = data.filter(book => book.volumeInfo?.title)
 
-  const handleSearch = (term) => {
-   
-    setSearchBook(term)
-
+  const handleSearch = (query) => {
+    setSearchBook(query)
+    setQuery(query)
   }
 
+  console.log( 'line 49 ', API_KEY)
 
-  console.log(API_KEY)
   return (
     <div className="App">
       <h1>BOOM BOOKSTORE </h1>
-       <SearchBar handleSearch={handleSearch} />
-       {message}
-       <BookShow data={searchResults}/>
-       <br/>
-       {/* <Comment/> */}
+      <SearchBar handleSearch={handleSearch} />
+      {message}
+      <BookShow data={searchResults} />
+      <br />
+      {/* <Comment/> */}
     </div>
   );
 }
