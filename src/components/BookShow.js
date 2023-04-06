@@ -1,5 +1,6 @@
 import BookItem from './BookItem'
 
+//this component is responsible for render a list of booksv'BookItem'
 const BookShow = (props) => {
 
     const displayBook = props.data.map((book) => {
