@@ -1,19 +1,17 @@
 import BookItem from './BookItem'
 
+//this component is responsible for render a list of booksv'BookItem'
 const BookShow = (props) => {
 
-    const displayBook = props.data.map((book, index) => {
+    const displayBook = props.data.map((book) => {
 
-        if(book.id) {
-        return <BookItem book={book} key={index} />
-        }
-        return null
+        return <BookItem book={book} authors={book.volumeInfo.authors} volume={book.volumeInfo} key={book.id} />
     })
-        return (
-            <div>
-                {displayBook}
-            </div>
-        )
+    return (
+        <div>
+            {displayBook}
+        </div>
+    )
 }
 
 export default BookShow
