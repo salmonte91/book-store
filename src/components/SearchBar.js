@@ -1,37 +1,35 @@
 import { useState } from "react"
-import axios from "axios"
-import BookItem from "./BookItem"
-// require('dotenv').config();
 
 const SearchBar = (props) => {
 
-    let [searchBook,setSearchBook] = useState('')
-    let [searchResults, setSearchResults] = useState([])
+    let [query, setQuery] = useState('')
 
-    const handleSearch = async (e) => {
-        
+    //the hanlde function call the props 'app-handlesearch'
+
+    const handleSearch = (e) => {
+        //check if we are passing the correct info 
+        console.log("Event:", e);
+        console.log("Search Query:", query);
+        props.handleSearch(query)
         e.preventDefault()
-        const API_KEY = process.env.REACT_APP_API_KEY
-        const API_URL = `https://www.googleapis.com/books/v1/volumes?q=${searchBook}&key=${API_KEY}`
-        try {
-            const res = await axios.get(API_URL)
-            setSearchResults(res.data.items)
-            console.log(res)
-        } catch (err){
-            console.log(err)
-        }
     }
 
-        return (
-            <div>
-                <form onSubmit={handleSearch} >
-                    <input type="text" placeholder="Search here" onChange={(e) => setSearchBook(e.target.value)} />
-                    <input type="submit" />
-                </form>
-                <BookItem data={searchResults} />
-            </div>
-           
-        )
+    //handle the update of the input value
+
+    const handleChange = (e) => {
+        setQuery(e.target.value)
+    }
+
+    return (
+        <div>
+            <form onSubmit={handleSearch} >
+                <label htmlFor="query" />
+                <input type="text" id="query" value={query} onChange={handleChange} />
+                <button type="submit" > Search</button>
+            </form>
+        </div>
+
+    )
 }
 
 export default SearchBar

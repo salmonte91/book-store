@@ -7,29 +7,28 @@ import StarRating from '.StarRating';
 
 function App() {
 
-  //remove query & data variable since the other components are being incharge of that
-  let [searchBook, setSearchBook] = useState('')
-  let [data, setData] = useState([])
-  let [message, setMessage] = useState('Search the Book you want!')
-  const [query, setQuery] = useState('');
+  let [searchBook, setSearchBook] = useState('')   /* in charge to track the search term entred by the user  */
+  let [data, setData] = useState([])               /* store the data retrieved from the api */
+  let [message, setMessage] = useState('Search the Book you want!')      /* display certain info to the user */
+  const [query, setQuery] = useState('');         /* kkeep track of the query that is used to fetch data from the API */
 
   const API_KEY = process.env.REACT_APP_API_KEY
-  // const API_URL = `https://www.googleapis.com/books/v1/volumes?q=&key=${API_KEY}`
-  const API_URL = `https://www.googleapis.com/books/v1/volumes?q=${query}&key=${API_KEY}`
+  let API_URL = `https://www.googleapis.com/books/v1/volumes?q=${query}&key=${API_KEY}`
 
   useEffect(() => {
-    
+    console.log("Query: ", query, "Search term: ", searchBook)
+    console.log("API URL: ", API_URL);
+
     if (searchBook) {
       document.title = `${searchBook} Book`
-      setQuery(searchBook);
     }
-  }, [searchBook]);
-
+  }, [searchBook, query]);
 
   useEffect(() => {
-    
-    if(searchBook) {
+    if (query) {
+      let API_URL = `https://www.googleapis.com/books/v1/volumes?q=${query}&key=${API_KEY}`;
       // fetch data using axios
+      // store data
       const axiosData = async () => {
         try {
           const res = await axios.get(API_URL)
@@ -38,40 +37,29 @@ function App() {
           console.log(err)
         }
       }
-      if (query) {
-        axiosData()
-      }
+      axiosData()
     }
-  }, [query, API_URL])
+  }, [query, API_KEY])
 
-  const searchResults = data.filter( book => book.volume.info.title)
+  const searchResults = data.filter(book => book.volumeInfo.title)
 
-  const handleSearch = (e, term) => {
-    e.preventDefault()
-    setSearchBook(term)
+
+  // his function sets the searchBook state to the value of query 
+  // it also sets the query state to the same value of query 
+  const handleSearch = (query) => {
+    setSearchBook(query)
+    setQuery(query)
   }
 
-
-  console.log(process.env)
   return (
     <div className="App">
       <h1>BOOM BOOKSTORE </h1>
-       <SearchBar handleSearch={handleSearch} />
-       {message}
-       <BookShow data={searchResults}/>
-       <br/>
-       {/* <Comment/> */}
+      <h3> {message}</h3>
+      <SearchBar handleSearch={handleSearch} />
+      <BookShow data={searchResults} />
+      <br />
+      {/* <Comment/> */}
+       <StarRating />
     </div>
   );
 }
-
-const App = () => {
-  return (
-    <div className="App">
-      <StarRating />
-    </div>
-  )
-}
-
-
-export default App;
