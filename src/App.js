@@ -3,6 +3,7 @@ import './App.css';
 import SearchBar from './components/SearchBar';
 import axios from 'axios'
 import BookShow from './components/BookShow';
+import StarRating from '.StarRating';
 
 function App() {
 
@@ -58,8 +59,7 @@ function App() {
       <BookShow data={searchResults} />
       <br />
       {/* <Comment/> */}
+       <StarRating />
     </div>
   );
 }
-
-export default App;
