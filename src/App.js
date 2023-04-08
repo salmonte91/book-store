@@ -60,7 +60,11 @@ function App() {
        <BookShow data={searchResults}/>
        <br/>
        {/* <Comment/> */}
+       <div className="footer-links">
+      <Footer></Footer>
     </div>
+    </div>
+    
   );
 }
 
