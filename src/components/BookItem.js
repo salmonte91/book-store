@@ -1,27 +1,20 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
-// require('dotenv').config();
-
-// the variable inside the main branch was searchBook, although i had a similar var in the SearchBar component
-// the variable inside teh main branch was searchBook, although i had a similar var in the SearchBar component
-// so i decide to change it to BookItem
-
-// we destructured props from bookShow
+import React from "react";
+import { Card, CardContent, CardHeader, Typography, Paper } from "@mui/material";
 
 const BookItem = ({ book }) => {
-
-    //inside the return i use a ternary operator so when theres no title available it manage the error
-    //same primciple with author 
-    //use join (, ) so when a book has multiple authors, this get separate by a coma
-    return (
-        <div>
-            <h2>{book.volumeInfo.title}</h2>
-            <p>
-                <strong>Author:</strong>{" "}
-                {book.volumeInfo.authors ? book.volumeInfo.authors.join(", ") : "Unknown"}
-            </p>
-        </div>
-    );
-}
+  return (
+    <Card container>
+      <Card item lg={4}>
+        <CardHeader title={book.volumeInfo.title} />
+        <Paper>
+            <strong>Author:</strong>{" "}
+            {book.volumeInfo.authors
+              ? book.volumeInfo.authors.join(", ")
+              : "Unknown"}
+        </Paper>
+      </Card>
+    </Card>
+  );
+};
 
 export default BookItem;
