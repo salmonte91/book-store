@@ -7,7 +7,7 @@ const BookShow = (props) => {
     });
 
     return (
-        <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
+        <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', alignItems: 'center', height: '100vh' }}>
             {displayBook}
         </div>
     );
