@@ -1,17 +1,17 @@
-import BookItem from './BookItem'
+import React from 'react';
+import BookItem from './BookItem';
 
-//this component is responsible for render a list of booksv'BookItem'
 const BookShow = (props) => {
-
     const displayBook = props.data.map((book) => {
+        return <BookItem book={book} key={book.id} />
+    });
 
-        return <BookItem book={book} authors={book.volumeInfo.authors} volume={book.volumeInfo} key={book.id} />
-    })
     return (
-        <div>
+        <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
             {displayBook}
         </div>
-    )
-}
+    );
+};
 
-export default BookShow
+export default BookShow;
+
