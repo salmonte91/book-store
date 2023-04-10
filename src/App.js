@@ -53,7 +53,7 @@ function App() {
 
   return (
     <div className="App">
-      <h1>BOOM BOOKSTORE </h1>
+      <h1>BOOM Book Library </h1>
       <h3> {message}</h3>
       <SearchBar handleSearch={handleSearch} />
       <br/>
@@ -63,7 +63,7 @@ function App() {
 <img src="" alt="NYU - Logo" />
 <div>
 <h2>Welcome to our Book Search App</h2>
-<p>"Welcome to Boom Bookstore, an app designed to help you discover your next great
+<p>"Welcome to Boom Book Library, an app designed to help you discover your next great
 read. Our app utilizes the Google Books API to provide you with a vast library of
 books to search through. Simply type in the name of a book you're interested in,
 and our app will fetch all relevant information about it, including its title, author, cover art, and more. </p>
@@ -78,12 +78,7 @@ You can rate books you've read, leave reviews, and share your thoughts with othe
 We believe that sharing your love of books is an essential part of the reading experience,
 and we've designed our app to facilitate that.</p>
 
-<p>Boom Bookstore is proud to be affiliated with XYZ College, a leading institution of higher
-education. As part of our affiliation, we offer exclusive deals to XYZ College students,
-faculty, and staff. Additionally, a portion of our proceeds goes towards supporting XYZ
-College's various academic and research programs.</p>
-
-<p>Thank you for choosing Boom Bookstore, and happy reading!"</p>
+<p>Thank you for choosing Boom Book Library, and happy reading!"</p>
 </div>
 <p>Features:</p>
 <div >
