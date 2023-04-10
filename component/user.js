@@ -1,5 +1,11 @@
-const express = require ('express')
-const mongoose = require('mongoose')
+import React, {useState} from 'react'; 
+
+const express = require("express");
+const mongoose = require('mongoose');
+const bodyParser = require('body-parser');
+const app = express();
+
+app.use(bodyParser.json());
 
 mongoose.connect('const mongoUrl = "mongodb+srv://wolfemanrock:iNrY2p9e704tcSeN@cluster0.4ynlcgy.mongodb.net/?retryWrites=true&w=majority"', {
   useNewUrlParser: true,
@@ -22,10 +28,10 @@ app.post('/api/signup', async (req, res) => {
     console.log('Server listening on port 3000');
   });
 
-//Post login
+//login
 app.post('/api/login', async (req, res) => {
     const { email, password } = req.body;
-    const user = new User({ email, password });
+    const user = User({ email, password });
     try {
       await user.save();
       res.send('User logged in successfully');
