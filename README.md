@@ -1,6 +1,6 @@
 # Boom Book Library
 
-The Boom Book Library is your one stop shop for finding your next adventure within the comfort and safety of your favorite novel. This project was created with React and uses technologies such as Material MUI and Google API. 
+The Boom Book Library is your one stop shop for finding your next adventure within the comfort and safety of your favorite novel. This project was created with React and uses technologies such as Material MUI and Google Books API. 
 
 We carefully selected the technologies used in this app based on our extensive knowledge and experience with each of them. In the past we built applications that relied on the use of an API so we decided a bookstore app that used a database of books would be the perfect fit. We knew that these tools would be the perfect fit to meet all of our expectations for the project. 
 
