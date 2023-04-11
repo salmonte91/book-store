@@ -1,70 +1,32 @@
-# Getting Started with Create React App
+# Boom Book Library
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+The Boom Book Library is your one stop shop for finding your next adventure within the comfort and safety of your favorite novel. This project was created with React and uses technologies such as Material MUI and Google API. 
 
-## Available Scripts
+We carefully selected the technologies used in this app based on our extensive knowledge and experience with each of them. In the past we built applications that relied on the use of an API so we decided a bookstore app that used a database of books would be the perfect fit. We knew that these tools would be the perfect fit to meet all of our expectations for the project. 
 
-In the project directory, you can run:
+When you first visit our application you'll be greeted by the welcome page. We have a search  form to help you find your desired book, a welcome message from us for you to read, as well as a footer giving you more information about our store and background.
 
-### `npm start`
+While we were able to complete a fully operational application, as with any development process, we faced several challenges along the way. Some of them were very basic from CSS styling issues to much more complex ones such as our information not being fetched properly from the API we're using. As developers, it's our job to understand and overcome these obstacles to ensure that the app functions optimally. 
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Installation
 
-### `npm test`
+Use the package manager [npm](https://docs.npmjs.com/cli/v6/commands/npm-install) to install 
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- npm install 
+- npm install @mui/material @emotion/react @emotion/styled
+- npm install @mui/styled-engine-sc styled-components
 
-### `npm run build`
+## Features
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Some of the features are ..
+ - Create a user account and log in using your profile
+ - Read a description about each book while viewing them individually on separate cards. 
+ - Leave comments about each book and give them a rating out of five stars. 
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Contributors
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Jimmy Aules 
+- Steven Almonte
+- Wolfe Edelman
+- Benjamin Yoon
