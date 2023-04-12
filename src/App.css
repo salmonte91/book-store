@@ -5,3 +5,6 @@
 body{
   background-image: url('/src/components/backg.png') 
 }
+.star-rating button.on .star{
+  color: gold;
+}

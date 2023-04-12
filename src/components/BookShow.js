@@ -1,19 +1,16 @@
-import BookItem from './BookItem'
+import BookItem from './BookItem';
 
 const BookShow = (props) => {
+    const displayBook = props.data.map((book, rating) => {
+        return <BookItem book={book} key={book.id} rating={rating} />
+    });
 
-    const displayBook = props.data.map((book, index) => {
+    return (
+        <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', alignItems: 'center', height: '100vh' }}>
+            {displayBook}
+        </div>
+    );
+};
 
-        if(book.id) {
-        return <BookItem book={book} key={index} />
-        }
-        return null
-    })
-        return (
-            <div>
-                {displayBook}
-            </div>
-        )
-}
+export default BookShow;
 
-export default BookShow
