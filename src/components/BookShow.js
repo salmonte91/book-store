@@ -1,6 +1,4 @@
-import React from 'react';
 import BookItem from './BookItem';
-import StarRating from './StarRating';
 
 const BookShow = (props) => {
     const displayBook = props.data.map((book, rating) => {
