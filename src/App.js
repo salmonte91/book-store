@@ -3,6 +3,7 @@ import './App.css';
 import SearchBar from './components/SearchBar';
 import axios from 'axios'
 import BookShow from './components/BookShow';
+import Footer from './components/Footer'
 
 function App() {
 
@@ -114,4 +115,3 @@ function App() {
 }
 
 export default App;
-
