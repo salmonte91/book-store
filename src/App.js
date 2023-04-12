@@ -105,7 +105,11 @@ function App() {
         </div>
       )}
       <BookShow data={searchResults} />
+      <div className="footer-links">
+      <Footer></Footer>
     </div>
+    </div>
+    
   );
 }
 
