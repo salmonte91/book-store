@@ -47,6 +47,7 @@ const BookItem = ({ book, rating }) => {
                 height: "400px",
                 overflow: "auto",
                 margin: "10px",
+                zIndex: "1",
             }}
         >
             <Card

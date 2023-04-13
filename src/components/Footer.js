@@ -6,7 +6,6 @@ const Footer = () => {
     padding: 80px 60px;
     text-align: center;
     background: black;
-    position: absolute;
     bottom: 0;
     min-height: 50px;
     width: 100%;
@@ -17,8 +16,7 @@ const Footer = () => {
     flex-wrap: wrap;
     flex-direction: row;
     justify-content: center;
-    width: "500px";
-    max-width: 1000px;
+    width: "100vh";
     margin: 0 autho;
   `;
 
@@ -33,11 +31,6 @@ const Footer = () => {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-
-    // @media (max-width: 1000px) {
-    //     grid-template-columns: repeat (auto-fill, minmax (200px, 1fr));
-    // }
-    //
   `;
 
   const FooterLink = styled.a`

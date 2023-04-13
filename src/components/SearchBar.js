@@ -11,6 +11,7 @@ const SearchBar = (props) => {
         console.log("Event:", e);
         console.log("Search Query:", query);
         props.handleSearch(query)
+        setQuery('');
         e.preventDefault()
     }
 

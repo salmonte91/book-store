@@ -75,7 +75,7 @@ function App() {
 
       {searchBook || query ? null : (
         <div style={{ 'color': 'black', 'background': 'white', 'opacity': '0.6', 'width': '53em', 'display': 'block', 'margin': '0 auto ', 'paddingBottom': '20px' }} >
-          <img src="" alt="NYU - Logo" />
+          <img src="/public/images/NYULogo.png" alt="NYU - Logo" />
           <div>
             <h2>Welcome to our Book Search App</h2>
             <p>"Welcome to Boom Book Library, an app designed to help you discover your next great
