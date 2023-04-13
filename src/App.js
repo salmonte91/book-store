@@ -4,6 +4,7 @@ import SearchBar from './components/SearchBar';
 import axios from 'axios'
 import BookShow from './components/BookShow';
 import Footer from './components/Footer'
+import NYULogo from './images/NYULogo.png'
 
 function App() {
 
@@ -68,14 +69,17 @@ function App() {
 
   return (
     <div className="App">
-      <h1>BOOM Book Library </h1>
+      <h1><a href="http://localhost:3000">BOOM Book Library</a></h1>
       <h3> {message}</h3>
       <SearchBar handleSearch={handleSearch} />
       <br />
+      {searchBook || query ? null : (
+  <img className='LOGO' src={NYULogo} alt="NYU - Logo" width={"50px"} height={"50px"} />
+)}
 
       {searchBook || query ? null : (
         <div style={{ 'color': 'black', 'background': 'white', 'opacity': '0.6', 'width': '53em', 'display': 'block', 'margin': '0 auto ', 'paddingBottom': '20px' }} >
-          <img src = "public\images\NYULogo.png" alt="NYU - Logo" />
+          
           <div>
             <h2>Welcome to our Book Search App</h2>
             <p>"Welcome to Boom Book Library, an app designed to help you discover your next great
