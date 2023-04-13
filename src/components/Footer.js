@@ -9,6 +9,7 @@ const Footer = () => {
     bottom: 0;
     min-height: 50px;
     width: 100%;
+    opacity: 0.8;
   `;
 
   const Container = styled.div`
